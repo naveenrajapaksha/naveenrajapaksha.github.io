@@ -1,7 +1,3 @@
-/* ============================================================
-   Naveen Rajapaksha — Portfolio Stylesheet
-   main.css
-   ============================================================ */
 
 /* ── CSS Variables ───────────────────────────────────────── */
 :root {
@@ -526,3 +522,37 @@ textarea.form-input { resize: vertical; min-height: 100px; }
 @media(max-width: 480px) {
     .nav-links a { font-size: 0.78rem; }
 }
+
+/* ============================================================
+   HERO ORBIT GUIDE CIRCLES — HIDDEN
+   Keeps the technology icons orbiting, but removes only the
+   visible circular guide lines around the profile image.
+   ============================================================ */
+.hero-photo-rig::before,
+.hero-photo-rig::after {
+    content: none !important;
+    display: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.hero-photo-rig .orbit-path,
+.hero-photo-rig .op-1,
+.hero-photo-rig .op-2,
+.hero-photo-rig .op-3,
+.hero-photo-rig .op-4,
+.hero-photo-rig .op-5,
+.hero-photo-rig .op-6 {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* The icons themselves stay visible and keep their existing animations. */
+.hero-photo-rig .orbit-icon {
+    visibility: visible;
+}
+
