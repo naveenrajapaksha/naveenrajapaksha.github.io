@@ -186,6 +186,14 @@ section#hero {
     margin: 0 auto;
     overflow: visible;
 }
+/* Make sure no decorative circles are drawn around the rig */
+.hero-photo-rig::before,
+.hero-photo-rig::after {
+    content: none !important;
+    display: none !important;
+}
+.orbit-path { border: none !important; }
+
 @keyframes heroFloat {
     0%,100% { transform: translateY(0px) rotate(0deg); }
     50%      { transform: translateY(-12px) rotate(0.4deg); }
