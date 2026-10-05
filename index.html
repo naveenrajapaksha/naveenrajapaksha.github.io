@@ -55,11 +55,9 @@
                 <div class="hero-photo-rig">
                     <!-- Ambient glow -->
                     <div class="hero-glow"></div>
-                    <!-- Spinning conic-gradient ring -->
-                    <div class="hero-ring"></div>
 
                     <!-- Orbit paths: 6 single-icon rings, 3 radii, 2 icons per radius staggered 180° -->
-                    <!-- Radius 1: React + Python -->
+                    <!-- Radius 1: React + JavaScript -->
                     <div class="orbit-path op-1">
                         <div class="orbit-icon">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
@@ -67,7 +65,7 @@
                     </div>
                     <div class="orbit-path op-2">
                         <div class="orbit-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Java Script">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
                         </div>
                     </div>
                     <!-- Radius 2: Java + Node.js -->
@@ -595,13 +593,7 @@
                 <div class="section-label">Credentials</div>
                 <div class="section-title">Certifications</div>
                 <div class="section-line"></div>
-<!--                <p style="color:var(&#45;&#45;text2);font-size:0.88rem;margin-bottom:2rem">-->
-<!--                    A selection of verified certifications and courses I've completed. Certificate images are shown-->
-<!--                    where available.-->
-<!--                </p>-->
                 <div class="certs-grid" id="certsGrid">
-                    <!-- Certs with photos will be injected here by JS if images exist,
-                     fallback cards shown below -->
 
                     <div class="cert-card" id="cert-python-for-beginners">
                         <div class="cert-img-wrap">
@@ -643,7 +635,6 @@
                         </div>
                     </div>
 
-
                     <div class="cert-card" id="cert-sql">
                         <div class="cert-img-wrap">
                             <img src="cert_sql.jpg" alt="SQL Certificate"
@@ -658,10 +649,6 @@
                         </div>
                     </div>
                 </div>
-<!--                <p id="no-certs-msg" style="color:var(&#45;&#45;text2);font-size:0.85rem;margin-top:1.5rem;display:none">-->
-<!--                    No certificate images are currently available. Add images named <code>cert_*.jpg</code> to this-->
-<!--                    folder to display them.-->
-<!--                </p>-->
             </div>
         </section>
 
@@ -768,7 +755,7 @@
         }
         type();
 
-        //  Nav scroll (highlights active link) 
+        //  Nav scroll 
         function navScrollTo(id) {
             const el = document.getElementById(id);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -805,12 +792,13 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        //  Certifications: hide cards with broken images 
+        //  Certifications: show message if all cert images are missing 
         window.addEventListener('load', () => {
             const certs = document.querySelectorAll('.cert-card');
             const visible = Array.from(certs).filter(c => c.style.display !== 'none');
-            if (visible.length === 0) {
-                document.getElementById('no-certs-msg').style.display = 'block';
+            const msg = document.getElementById('no-certs-msg');
+            if (visible.length === 0 && msg) {
+                msg.style.display = 'block';
             }
         });
 
